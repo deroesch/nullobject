@@ -1,5 +1,7 @@
 package org.deroesch.nullobject;
 
+import org.apache.commons.lang3.StringUtils;
+
 import lombok.NonNull;
 
 /**
@@ -8,10 +10,10 @@ import lombok.NonNull;
 public class LiveContact extends Contact {
 
     public LiveContact() {
-        super("unknown", "unknown");
+        super(StringUtils.EMPTY, StringUtils.EMPTY);
     }
 
-    public LiveContact(@NonNull String name, @NonNull String phone) {
+    public LiveContact(@NonNull final String name, @NonNull final String phone) {
         super(name, phone);
     }
 

@@ -7,11 +7,14 @@ import lombok.NonNull;
  */
 public class NullContact extends Contact {
 
+    static final String NULL_PHONE = "phone";
+    static final String NULL_NAME = "name";
+
     /**
      * Null contact field values are the field names.
      */
     public NullContact() {
-        super("name", "phone");
+        super(NULL_NAME, NULL_PHONE);
     }
 
     @Override

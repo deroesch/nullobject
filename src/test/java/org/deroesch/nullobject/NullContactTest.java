@@ -15,9 +15,14 @@ import org.junit.jupiter.api.Test;
  */
 class NullContactTest {
 
+    /*
+     * Contact under test
+     */
     Contact c;
 
     /**
+     * Initialize contact under test before EACH test
+     *
      * @throws java.lang.Exception
      */
     @BeforeEach
@@ -38,8 +43,8 @@ class NullContactTest {
      */
     @Test
     void testNullContact() {
-        assertEquals("name", c.getName());
-        assertEquals("phone", c.getPhone());
+        assertEquals(NullContact.NULL_NAME, c.getName());
+        assertEquals(NullContact.NULL_PHONE, c.getPhone());
         assertTrue(c.isNull());
     }
 
@@ -48,7 +53,7 @@ class NullContactTest {
      */
     @Test
     void testGetName() {
-        assertEquals("name", c.getName());
+        assertEquals(NullContact.NULL_NAME, c.getName());
     }
 
     /**
@@ -56,7 +61,7 @@ class NullContactTest {
      */
     @Test
     void testGetPhone() {
-        assertEquals("phone", c.getPhone());
+        assertEquals(NullContact.NULL_PHONE, c.getPhone());
     }
 
     /**
@@ -65,7 +70,7 @@ class NullContactTest {
     @Test
     void testSetName() {
         c.setName("Jack Sprat");
-        assertEquals("name", c.getName());
+        assertEquals(NullContact.NULL_NAME, c.getName());
 
         assertThrows(NullPointerException.class, () -> {
             c.setName(null);
@@ -78,7 +83,7 @@ class NullContactTest {
     @Test
     void testSetPhone() {
         c.setPhone("412-555-1212");
-        assertEquals("phone", c.getPhone());
+        assertEquals(NullContact.NULL_PHONE, c.getPhone());
 
         assertThrows(NullPointerException.class, () -> {
             c.setPhone(null);

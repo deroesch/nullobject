@@ -18,8 +18,8 @@ public abstract class Contact {
 
     /**
      * Is this a null object?
-     * 
-     * @return
+     *
+     * @return False if this a null object, true otherwise.
      */
     public abstract boolean isNull();
 

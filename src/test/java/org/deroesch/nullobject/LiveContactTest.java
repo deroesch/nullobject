@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,9 +13,20 @@ import org.junit.jupiter.api.Test;
  */
 class LiveContactTest {
 
+    /*
+     * Test constants
+     */
+    private static final String PH_412_555_1212 = "412-555-1212";
+    private static final String JACK_SPRAT = "Jack Sprat";
+
+    /*
+     * Contact under test
+     */
     Contact c;
 
     /**
+     * Initialize contact under tests before EACH test.
+     *
      * @throws java.lang.Exception
      */
     @BeforeEach
@@ -35,8 +47,8 @@ class LiveContactTest {
      */
     @Test
     void testLiveContact() {
-        assertEquals("unknown", c.getName());
-        assertEquals("unknown", c.getPhone());
+        assertEquals(StringUtils.EMPTY, c.getName());
+        assertEquals(StringUtils.EMPTY, c.getPhone());
         assertFalse(c.isNull());
     }
 
@@ -47,20 +59,17 @@ class LiveContactTest {
     @Test
     void testLiveContactStringString() {
 
-        final String name = "Jack Sprat";
-        final String phone = "412-555-1212";
-
-        c = new LiveContact(name, phone);
-        assertEquals(name, c.getName());
-        assertEquals(phone, c.getPhone());
+        c = new LiveContact(JACK_SPRAT, PH_412_555_1212);
+        assertEquals(JACK_SPRAT, c.getName());
+        assertEquals(PH_412_555_1212, c.getPhone());
         assertFalse(c.isNull());
 
         assertThrows(NullPointerException.class, () -> {
-            new LiveContact(name, null);
+            new LiveContact(JACK_SPRAT, null);
         });
 
         assertThrows(NullPointerException.class, () -> {
-            new LiveContact(null, phone);
+            new LiveContact(null, PH_412_555_1212);
         });
     }
 
@@ -69,7 +78,7 @@ class LiveContactTest {
      */
     @Test
     void testGetName() {
-        assertEquals("unknown", c.getName());
+        assertEquals(StringUtils.EMPTY, c.getName());
     }
 
     /**
@@ -77,7 +86,7 @@ class LiveContactTest {
      */
     @Test
     void testGetPhone() {
-        assertEquals("unknown", c.getPhone());
+        assertEquals(StringUtils.EMPTY, c.getPhone());
     }
 
     /**
@@ -85,9 +94,8 @@ class LiveContactTest {
      */
     @Test
     void testSetName() {
-        final String value = "Jack Sprat";
-        c.setName(value);
-        assertEquals(value, c.getName());
+        c.setName(JACK_SPRAT);
+        assertEquals(JACK_SPRAT, c.getName());
 
         assertThrows(NullPointerException.class, () -> {
             c.setName(null);
@@ -99,9 +107,8 @@ class LiveContactTest {
      */
     @Test
     void testSetPhone() {
-        final String value = "412-555-1212";
-        c.setPhone(value);
-        assertEquals(value, c.getPhone());
+        c.setPhone(PH_412_555_1212);
+        assertEquals(PH_412_555_1212, c.getPhone());
 
         assertThrows(NullPointerException.class, () -> {
             c.setPhone(null);
