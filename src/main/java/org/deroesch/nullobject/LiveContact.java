@@ -5,7 +5,7 @@ import lombok.NonNull;
 /**
  * A real contact
  */
-public class LiveContact extends MiniContact {
+public class LiveContact extends Contact {
 
     public LiveContact() {
         super("unknown", "unknown");

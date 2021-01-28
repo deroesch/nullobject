@@ -8,7 +8,7 @@ import lombok.NonNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class MiniContact {
+public abstract class Contact {
 
     @NonNull
     private String name;

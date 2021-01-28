@@ -5,7 +5,7 @@ import lombok.NonNull;
 /**
  * A Null Contact
  */
-public class NullContact extends MiniContact {
+public class NullContact extends Contact {
 
     /**
      * Null contact field values are the field names.

@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
  */
 class LiveContactTest {
 
-    MiniContact c;
+    Contact c;
 
     /**
      * @throws java.lang.Exception
@@ -65,7 +65,7 @@ class LiveContactTest {
     }
 
     /**
-     * Test method for {@link org.deroesch.nullobject.MiniContact#getName()}.
+     * Test method for {@link org.deroesch.nullobject.Contact#getName()}.
      */
     @Test
     void testGetName() {
@@ -73,7 +73,7 @@ class LiveContactTest {
     }
 
     /**
-     * Test method for {@link org.deroesch.nullobject.MiniContact#getPhone()}.
+     * Test method for {@link org.deroesch.nullobject.Contact#getPhone()}.
      */
     @Test
     void testGetPhone() {
@@ -81,7 +81,7 @@ class LiveContactTest {
     }
 
     /**
-     * Test method for {@link org.deroesch.nullobject.MiniContact#setName(String)}.
+     * Test method for {@link org.deroesch.nullobject.Contact#setName(String)}.
      */
     @Test
     void testSetName() {
@@ -95,7 +95,7 @@ class LiveContactTest {
     }
 
     /**
-     * Test method for {@link org.deroesch.nullobject.MiniContact#setPhone(String)}.
+     * Test method for {@link org.deroesch.nullobject.Contact#setPhone(String)}.
      */
     @Test
     void testSetPhone() {
