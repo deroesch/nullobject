@@ -90,4 +90,12 @@ class NullContactTest {
         });
     }
 
+    /*
+     * These tests are just to pacify the code coverage tool.
+     */
+    @Test
+    void testToString() {
+        assertEquals("Contact(name=name, phone=phone)", c.toString());
+    }
+
 }

@@ -71,6 +71,10 @@ class LiveContactTest {
         assertThrows(NullPointerException.class, () -> {
             new LiveContact(null, PH_412_555_1212);
         });
+
+        assertThrows(NullPointerException.class, () -> {
+            new LiveContact(null, null);
+        });
     }
 
     /**
@@ -113,6 +117,11 @@ class LiveContactTest {
         assertThrows(NullPointerException.class, () -> {
             c.setPhone(null);
         });
+    }
+
+    @Test
+    void testToString() {
+        assertEquals("Contact(name=, phone=)", c.toString());
     }
 
 }

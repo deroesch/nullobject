@@ -1,13 +1,11 @@
 package org.deroesch.nullobject;
 
-import lombok.AllArgsConstructor;
+import java.util.Objects;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public abstract class Contact {
 
     @NonNull
@@ -22,5 +20,22 @@ public abstract class Contact {
      * @return False if this a null object, true otherwise.
      */
     public abstract boolean isNull();
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Contact)) {
+            return false;
+        }
+        Contact other = (Contact) obj;
+        return Objects.equals(name, other.name) && Objects.equals(phone, other.phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, phone);
+    }
 
 }
