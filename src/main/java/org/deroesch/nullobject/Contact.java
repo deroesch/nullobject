@@ -5,6 +5,9 @@ import java.util.Objects;
 import lombok.Data;
 import lombok.NonNull;
 
+/**
+ * A simple contact w/ name and phone number.
+ */
 @Data
 public abstract class Contact {
 
